@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Kalkulator Walut</title>
+</head>
+  
+<body>
+  <h1>Currency Calculator</h1>
+
+  <form class="detail" method="POST", action="/">
+
+      <input type="text" placeholder="Quantity" name="quantity" id="quantity" required> 
+
+      <select class="code" name='code' id="code">
+        <ul>
+          {% for code in codes_v2 %}
+            <option value="{{code}}" id="code" name='code' >
+              <li>{{code}}</li>
+            </option>
+          {% endfor %}
+        </ul>
+      </select>
+    
+    <button type="submit">Calculate</button><p></p>
+  
+  </form>
+    {% if result %}
+      <input type="text" value="{{quantity}} {{code}} is {{result}} PLN"
+    {% endif %}
+  
+</body>
+</html>
